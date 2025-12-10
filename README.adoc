@@ -1,4 +1,4 @@
-# Branch Newspaper
+= Branch Newspaper
 
 [![CI](https://github.com/hyperpolymath/branch-newspaper/actions/workflows/ci.yml/badge.svg)](https://github.com/hyperpolymath/branch-newspaper/actions/workflows/ci.yml)
 [![Mirror Sync](https://github.com/hyperpolymath/branch-newspaper/actions/workflows/mirror-sync.yml/badge.svg)](https://github.com/hyperpolymath/branch-newspaper/actions/workflows/mirror-sync.yml)
@@ -6,14 +6,14 @@
 
 A Phoenix LiveView application for managing and distributing meeting minutes with IPFS integration for decentralized content storage.
 
-## Features
+== Features
 
-- **Meeting Minutes Management** - Create, edit, and organize meeting minutes
-- **IPFS Integration** - Store content on IPFS for decentralized, immutable storage
-- **Real-time UI** - Phoenix LiveView for instant updates without page reloads
-- **Tag Organization** - Categorize minutes with tags for easy discovery
+- *Meeting Minutes Management* - Create, edit, and organize meeting minutes
+- *IPFS Integration* - Store content on IPFS for decentralized, immutable storage
+- *Real-time UI* - Phoenix LiveView for instant updates without page reloads
+- *Tag Organization* - Categorize minutes with tags for easy discovery
 
-## Tech Stack
+== Tech Stack
 
 | Component | Technology |
 |-----------|------------|
@@ -24,69 +24,69 @@ A Phoenix LiveView application for managing and distributing meeting minutes wit
 | Storage | IPFS (Kubo) |
 | CSS | Tailwind CSS v4 |
 
-## Prerequisites
+== Prerequisites
 
 - Elixir 1.15+ and Erlang/OTP 25+
 - Node.js 18+ (for asset compilation)
 - IPFS node (Kubo) running locally or accessible
 
-## Getting Started
+== Getting Started
 
-### Development Setup
+=== Development Setup
 
-1. **Clone the repository**
+1. *Clone the repository*
    ```bash
    git clone https://github.com/hyperpolymath/branch-newspaper.git
    cd branch-newspaper
    ```
 
-2. **Install dependencies and setup database**
+2. *Install dependencies and setup database*
    ```bash
    mix setup
    ```
 
-3. **Start the IPFS daemon** (in a separate terminal)
+3. *Start the IPFS daemon* (in a separate terminal)
    ```bash
    ipfs daemon
    ```
 
-4. **Start the Phoenix server**
+4. *Start the Phoenix server*
    ```bash
    mix phx.server
    # Or with interactive Elixir shell:
    iex -S mix phx.server
    ```
 
-5. **Visit the application**
+5. *Visit the application*
 
    Open [http://localhost:4000](http://localhost:4000) in your browser.
 
-### Running Tests
+=== Running Tests
 
 ```bash
-# Run all tests
+= Run all tests
 mix test
 
-# Run with coverage
+= Run with coverage
 mix test --cover
 
-# Run the precommit checks (format, compile warnings, tests)
+= Run the precommit checks (format, compile warnings, tests)
 mix precommit
 ```
 
-### Code Quality
+=== Code Quality
 
 ```bash
-# Check formatting
+= Check formatting
 mix format --check-formatted
 
-# Run all lint checks
+= Run all lint checks
 ./ci-scripts/lint.sh
 ```
 
-## Configuration
+== Configuration
 
-### Environment Variables
+=== Environment Variables
 
 | Variable | Description | Default |
 |----------|-------------|---------|
@@ -98,7 +98,7 @@ mix format --check-formatted
 
 See [SECRETS.md](SECRETS.md) for complete secrets documentation.
 
-## Project Structure
+== Project Structure
 
 ```
 branch-newspaper/
@@ -117,23 +117,23 @@ branch-newspaper/
 └── test/                # Test files
 ```
 
-## Documentation
+== Documentation
 
 - [ROADMAP.adoc](ROADMAP.adoc) - Development roadmap and MVP plan
 - [TODO.md](TODO.md) - Task backlog and improvements
 - [SECRETS.md](SECRETS.md) - Secrets and configuration guide
 - [AGENTS.md](AGENTS.md) - AI coding guidelines
 
-## CI/CD
+== CI/CD
 
 This project uses unified CI/CD that runs on both GitHub Actions and GitLab CI:
 
-- **Lint** - Code formatting and static analysis
-- **Test** - ExUnit tests across multiple Elixir versions
-- **Build** - Release compilation for deployment
-- **Mirror** - Automatic sync between GitHub and GitLab
+- *Lint* - Code formatting and static analysis
+- *Test* - ExUnit tests across multiple Elixir versions
+- *Build* - Release compilation for deployment
+- *Mirror* - Automatic sync between GitHub and GitLab
 
-### Test Matrix
+=== Test Matrix
 
 | Elixir | OTP | Status |
 |--------|-----|--------|
@@ -141,7 +141,7 @@ This project uses unified CI/CD that runs on both GitHub Actions and GitLab CI:
 | 1.15.7 | 26.2 | Primary |
 | 1.16.0 | 26.2 | Latest |
 
-## Contributing
+== Contributing
 
 1. Fork the repository
 2. Create a feature branch (`git checkout -b feature/amazing-feature`)
@@ -150,18 +150,18 @@ This project uses unified CI/CD that runs on both GitHub Actions and GitLab CI:
 5. Push to the branch (`git push origin feature/amazing-feature`)
 6. Open a Pull Request
 
-## Repository Mirrors
+== Repository Mirrors
 
-- **Primary (GitHub)**: https://github.com/hyperpolymath/branch-newspaper
-- **Mirror (GitLab)**: https://gitlab.com/maa-framework/3-applications/branch-newspaper
+- *Primary (GitHub)*: https://github.com/hyperpolymath/branch-newspaper
+- *Mirror (GitLab)*: https://gitlab.com/maa-framework/3-applications/branch-newspaper
 
 Changes pushed to GitHub are automatically mirrored to GitLab.
 
-## License
+== License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## Acknowledgments
+== Acknowledgments
 
 - [Phoenix Framework](https://phoenixframework.org/)
 - [IPFS](https://ipfs.tech/)
