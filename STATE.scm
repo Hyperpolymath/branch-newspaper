@@ -15,7 +15,7 @@
   '((version . "0.1.0")
     (schema-version . "1.0")
     (created . "2025-12-15")
-    (updated . "2025-12-15")
+    (updated . "2025-12-18")
     (project . "branch-newspaper")
     (repo . "github.com/hyperpolymath/branch-newspaper")))
 
@@ -31,9 +31,10 @@
     (rsr-compliance . "gold-target")
 
     (tech-stack
-     ((primary . "See repository languages")
+     ((primary . "Elixir/Phoenix LiveView")
       (ci-cd . "GitHub Actions + GitLab CI + Bitbucket Pipelines")
-      (security . "CodeQL + OSSF Scorecard")))))
+      (security . "CodeQL + OSSF Scorecard + TruffleHog")
+      (package-management . "Guix (primary)")))))
 
 ;;;============================================================================
 ;;; CURRENT POSITION
@@ -41,68 +42,128 @@
 
 (define current-position
   '((phase . "v0.1 - Initial Setup and RSR Compliance")
-    (overall-completion . 25)
+    (overall-completion . 40)
 
     (components
      ((rsr-compliance
        ((status . "complete")
         (completion . 100)
-        (notes . "SHA-pinned actions, SPDX headers, multi-platform CI")))
+        (notes . "All workflows SHA-pinned, SPDX headers, permissions declared")))
+
+      (security
+       ((status . "complete")
+        (completion . 100)
+        (notes . "All GitHub Actions SHA-pinned, SECURITY.md updated, TruffleHog integrated")))
 
       (documentation
        ((status . "foundation")
-        (completion . 30)
-        (notes . "README exists, META/ECOSYSTEM/STATE.scm added")))
+        (completion . 50)
+        (notes . "README, META.scm, ECOSYSTEM.scm, STATE.scm, SECURITY.md, SECRETS.md")))
 
       (testing
-       ((status . "minimal")
-        (completion . 10)
-        (notes . "CI/CD scaffolding exists, limited test coverage")))
+       ((status . "scaffolded")
+        (completion . 15)
+        (notes . "CI/CD scaffolding exists, Elixir test matrix configured")))
 
       (core-functionality
-       ((status . "in-progress")
-        (completion . 25)
-        (notes . "Initial implementation underway")))))
+       ((status . "pending")
+        (completion . 10)
+        (notes . "Phoenix/Elixir structure defined, awaiting implementation")))))
 
     (working-features
-     ("RSR-compliant CI/CD pipeline"
+     ("RSR-compliant CI/CD pipeline with SHA-pinned actions"
       "Multi-platform mirroring (GitHub, GitLab, Bitbucket)"
       "SPDX license headers on all files"
-      "SHA-pinned GitHub Actions"))))
+      "OSSF Scorecard integration"
+      "TruffleHog secrets scanning"
+      "EditorConfig enforcement"
+      "Security policy checks (no weak crypto, HTTPS only)"
+      "Guix package management"))))
 
 ;;;============================================================================
-;;; ROUTE TO MVP
+;;; ROUTE TO MVP - UPDATED ROADMAP
 ;;;============================================================================
 
 (define route-to-mvp
   '((target-version . "1.0.0")
-    (definition . "Stable release with comprehensive documentation and tests")
+    (definition . "Production-ready Phoenix LiveView application for meeting minutes management with IPFS integration")
 
     (milestones
-     ((v0.2
-       ((name . "Core Functionality")
-        (status . "pending")
+     ((v0.1.1
+       ((name . "Security Hardening Complete")
+        (status . "complete")
+        (completed-date . "2025-12-18")
         (items
-         ("Implement primary features"
-          "Add comprehensive tests"
-          "Improve documentation"))))
+         ("SHA-pin all GitHub Actions"
+          "Add SPDX headers to all workflows"
+          "Add permissions declarations"
+          "Update SECURITY.md with actual policy"
+          "Integrate TruffleHog and EditorConfig"))))
+
+      (v0.2
+       ((name . "Core Phoenix Setup")
+        (status . "pending")
+        (target . "Q1 2026")
+        (items
+         ("Initialize Phoenix LiveView application"
+          "Set up Ecto with SQLite for development"
+          "Create basic data models (meetings, minutes, users)"
+          "Implement authentication system"
+          "Add initial test coverage > 50%"))))
+
+      (v0.3
+       ((name . "Meeting Minutes CRUD")
+        (status . "pending")
+        (target . "Q1 2026")
+        (items
+         ("Create LiveView components for minutes management"
+          "Implement real-time collaborative editing"
+          "Add markdown/rich text support"
+          "Build search functionality"
+          "Test coverage > 60%"))))
+
+      (v0.4
+       ((name . "IPFS Integration")
+        (status . "pending")
+        (target . "Q2 2026")
+        (items
+         ("Integrate IPFS for content storage"
+          "Implement content addressing"
+          "Add pinning service support"
+          "Build content retrieval gateway"
+          "Test coverage > 70%"))))
 
       (v0.5
-       ((name . "Feature Complete")
+       ((name . "Distribution Features")
         (status . "pending")
+        (target . "Q2 2026")
         (items
-         ("All planned features implemented"
-          "Test coverage > 70%"
-          "API stability"))))
+         ("Email distribution system"
+          "RSS/Atom feed generation"
+          "Export to PDF/DOCX"
+          "API for external integrations"))))
+
+      (v0.8
+       ((name . "Beta Release")
+        (status . "pending")
+        (target . "Q3 2026")
+        (items
+         ("Performance optimization"
+          "Security audit"
+          "Load testing"
+          "Documentation complete"
+          "Test coverage > 80%"))))
 
       (v1.0
        ((name . "Production Release")
         (status . "pending")
+        (target . "Q4 2026")
         (items
-         ("Comprehensive test coverage"
-          "Performance optimization"
-          "Security audit"
-          "User documentation complete"))))))))
+         ("Production deployment guide"
+          "Monitoring and alerting"
+          "Backup and recovery procedures"
+          "User documentation"
+          "API documentation"))))))))
 
 ;;;============================================================================
 ;;; BLOCKERS & ISSUES
@@ -116,16 +177,16 @@
      ())  ;; No high-priority blockers
 
     (medium-priority
-     ((test-coverage
-       ((description . "Limited test infrastructure")
-        (impact . "Risk of regressions")
-        (needed . "Comprehensive test suites")))))
+     ((phoenix-setup
+       ((description . "Phoenix application not yet initialized")
+        (impact . "Cannot begin feature development")
+        (needed . "Run mix phx.new and configure project")))))
 
     (low-priority
-     ((documentation-gaps
-       ((description . "Some documentation areas incomplete")
-        (impact . "Harder for new contributors")
-        (needed . "Expand documentation")))))))
+     ((deno-migration
+       ((description . "CLAUDE.md mentions npm to Deno conversion")
+        (impact . "May need frontend tooling decisions")
+        (needed . "Evaluate if Deno is needed for Phoenix assets")))))))
 
 ;;;============================================================================
 ;;; CRITICAL NEXT ACTIONS
@@ -133,17 +194,19 @@
 
 (define critical-next-actions
   '((immediate
-     (("Review and update documentation" . medium)
-      ("Add initial test coverage" . high)
-      ("Verify CI/CD pipeline functionality" . high)))
+     (("Initialize Phoenix LiveView project" . high)
+      ("Configure Ecto with SQLite" . high)
+      ("Create basic data models" . medium)))
 
     (this-week
-     (("Implement core features" . high)
-      ("Expand test coverage" . medium)))
+     (("Implement user authentication" . high)
+      ("Create meeting minutes schema" . high)
+      ("Add first LiveView pages" . medium)))
 
     (this-month
      (("Reach v0.2 milestone" . high)
-      ("Complete documentation" . medium)))))
+      ("Achieve 50% test coverage" . medium)
+      ("Document API design" . medium)))))
 
 ;;;============================================================================
 ;;; SESSION HISTORY
@@ -151,6 +214,27 @@
 
 (define session-history
   '((snapshots
+     ((date . "2025-12-18")
+      (session . "security-hardening")
+      (accomplishments
+       ("SHA-pinned all GitHub Actions in 10 workflow files"
+        "Added SPDX-License-Identifier headers to all workflows"
+        "Added permissions declarations to all workflows"
+        "Updated SECURITY.md with actual security policy"
+        "Fixed TruffleHog and EditorConfig from @main to SHA pins"
+        "Updated STATE.scm with detailed roadmap"))
+      (security-fixes
+       ("ci.yml: 6 actions pinned"
+        "scorecard.yml: 3 actions pinned"
+        "quality.yml: 3 actions pinned (removed @main refs)"
+        "security-policy.yml: 1 action pinned"
+        "rsr-antipattern.yml: 1 action pinned"
+        "jekyll-gh-pages.yml: 5 actions pinned"
+        "wellknown-enforcement.yml: 1 action pinned"
+        "guix-nix-policy.yml: 1 action pinned"
+        "mirror-sync.yml: 2 actions pinned"))
+      (notes . "Major security update - all workflows now RSR Gold compliant"))
+
      ((date . "2025-12-15")
       (session . "initial-state-creation")
       (accomplishments
@@ -185,10 +269,10 @@
 (define state-summary
   '((project . "branch-newspaper")
     (version . "0.1.0")
-    (overall-completion . 25)
-    (next-milestone . "v0.2 - Core Functionality")
+    (overall-completion . 40)
+    (next-milestone . "v0.2 - Core Phoenix Setup")
     (critical-blockers . 0)
     (high-priority-issues . 0)
-    (updated . "2025-12-15")))
+    (updated . "2025-12-18")))
 
 ;;; End of STATE.scm
