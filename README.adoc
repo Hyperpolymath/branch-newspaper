@@ -1,10 +1,10 @@
 = Branch Newspaper
 
-[![CI](https://github.com/hyperpolymath/branch-newspaper/actions/workflows/ci.yml/badge.svg)](https://github.com/hyperpolymath/branch-newspaper/actions/workflows/ci.yml)
-[![Mirror Sync](https://github.com/hyperpolymath/branch-newspaper/actions/workflows/mirror-sync.yml/badge.svg)](https://github.com/hyperpolymath/branch-newspaper/actions/workflows/mirror-sync.yml)
-[![CodeQL](https://github.com/hyperpolymath/branch-newspaper/actions/workflows/codeql.yml/badge.svg)](https://github.com/hyperpolymath/branch-newspaper/actions/workflows/codeql.yml)
+[![CI]()](https://github.com/hyperpolymath/branch-newspaper/actions/workflows/ci.yml)
+[![Mirror Sync]()](https://github.com/hyperpolymath/branch-newspaper/actions/workflows/mirror-sync.yml)
+[![CodeQL]()](https://github.com/hyperpolymath/branch-newspaper/actions/workflows/codeql.yml)
 
-A Phoenix LiveView application for managing and distributing meeting minutes with IPFS integration for decentralized content storage.
+A Phoenix LiveView application for citizen journalists and union branches with integration for decentralized content storage.
 
 == Features
 
