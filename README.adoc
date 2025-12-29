@@ -1,5 +1,7 @@
 = Branch Newspaper
 
+image:https://img.shields.io/badge/license-AGPL--3.0-blue.svg[AGPL-3.0,link="https://www.gnu.org/licenses/agpl-3.0"] image:https://img.shields.io/badge/philosophy-Palimpsest-purple.svg[Palimpsest,link="https://github.com/hyperpolymath/palimpsest-licence"]
+
 [![CI]()](https://github.com/hyperpolymath/branch-newspaper/actions/workflows/ci.yml)
 [![Mirror Sync]()](https://github.com/hyperpolymath/branch-newspaper/actions/workflows/mirror-sync.yml)
 [![CodeQL]()](https://github.com/hyperpolymath/branch-newspaper/actions/workflows/codeql.yml)
@@ -65,12 +67,18 @@ A Phoenix LiveView application for citizen journalists and union branches with i
 
 ```bash
 = Run all tests
+
+image:https://img.shields.io/badge/license-AGPL--3.0-blue.svg[AGPL-3.0,link="https://www.gnu.org/licenses/agpl-3.0"] image:https://img.shields.io/badge/philosophy-Palimpsest-purple.svg[Palimpsest,link="https://github.com/hyperpolymath/palimpsest-licence"]
 mix test
 
 = Run with coverage
+
+image:https://img.shields.io/badge/license-AGPL--3.0-blue.svg[AGPL-3.0,link="https://www.gnu.org/licenses/agpl-3.0"] image:https://img.shields.io/badge/philosophy-Palimpsest-purple.svg[Palimpsest,link="https://github.com/hyperpolymath/palimpsest-licence"]
 mix test --cover
 
 = Run the precommit checks (format, compile warnings, tests)
+
+image:https://img.shields.io/badge/license-AGPL--3.0-blue.svg[AGPL-3.0,link="https://www.gnu.org/licenses/agpl-3.0"] image:https://img.shields.io/badge/philosophy-Palimpsest-purple.svg[Palimpsest,link="https://github.com/hyperpolymath/palimpsest-licence"]
 mix precommit
 ```
 
@@ -78,9 +86,13 @@ mix precommit
 
 ```bash
 = Check formatting
+
+image:https://img.shields.io/badge/license-AGPL--3.0-blue.svg[AGPL-3.0,link="https://www.gnu.org/licenses/agpl-3.0"] image:https://img.shields.io/badge/philosophy-Palimpsest-purple.svg[Palimpsest,link="https://github.com/hyperpolymath/palimpsest-licence"]
 mix format --check-formatted
 
 = Run all lint checks
+
+image:https://img.shields.io/badge/license-AGPL--3.0-blue.svg[AGPL-3.0,link="https://www.gnu.org/licenses/agpl-3.0"] image:https://img.shields.io/badge/philosophy-Palimpsest-purple.svg[Palimpsest,link="https://github.com/hyperpolymath/palimpsest-licence"]
 ./ci-scripts/lint.sh
 ```
 
