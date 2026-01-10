@@ -1,6 +1,9 @@
 = Branch Newspaper
+image:https://img.shields.io/badge/license-PMPL--1.0-blue.svg[License,link="https://github.com/hyperpolymath/palimpsest-license"]
 
-image:https://img.shields.io/badge/License-MPL_2.0-blue.svg[MPL-2.0,link="https://opensource.org/licenses/MPL-2.0"]
+
+
+
 image:https://img.shields.io/badge/Philosophy-Palimpsest-purple.svg[Palimpsest,link="https://github.com/hyperpolymath/palimpsest-licence"]
 
 
@@ -168,7 +171,7 @@ Changes pushed to GitHub are automatically mirrored to GitLab.
 
 == License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the Palimpsest-MPL License v1.0 (PMPL-1.0) - see the [LICENSE](LICENSE) file for details.
 
 == Acknowledgments
 
