@@ -175,3 +175,8 @@ This project is licensed under the Palimpsest-MPL-1.0 License - see the [LICENSE
 - [Phoenix Framework](https://phoenixframework.org/)
 - [IPFS](https://ipfs.tech/)
 - Part of the [MAA Framework](https://gitlab.com/maa-framework) project
+
+
+== Architecture
+
+See link:TOPOLOGY.md[TOPOLOGY.md] for a visual architecture map and completion dashboard.
