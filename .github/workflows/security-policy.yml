@@ -1,11 +1,17 @@
 # SPDX-License-Identifier: PMPL-1.0-or-later
+permissions: read-all
+
 name: Security Policy
 on: [push, pull_request]
+npermissions: read-all
+
 jobs:
   check:
     runs-on: ubuntu-latest
+npermissions: read-all
+
     steps:
-      - uses: actions/checkout@v6.0.1
+      - uses: actions/checkout@v6.0.2
       - name: Security checks
         run: |
           FAILED=false
