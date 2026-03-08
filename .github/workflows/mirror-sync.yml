@@ -1,7 +1,11 @@
 # SPDX-License-Identifier: PMPL-1.0-or-later
+permissions: read-all
+
 name: Mirror Sync
 
 on:
+npermissions: read-all
+
   push:
     branches: ['**']
     tags: ['**']
@@ -11,6 +15,8 @@ on:
     inputs:
       full_sync:
         description: 'Perform full mirror sync (all branches and tags)'
+npermissions: read-all
+
         required: false
         default: 'false'
         type: boolean
@@ -19,12 +25,14 @@ jobs:
   mirror-push:
     name: Push to GitLab Mirror
     runs-on: ubuntu-latest
+npermissions: read-all
+
     # Only run on the main repo, not forks
     if: github.repository == 'hyperpolymath/branch-newspaper'
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v6.0.1
+        uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8
         with:
           fetch-depth: 0
 
@@ -116,12 +124,14 @@ jobs:
   verify-mirror:
     name: Verify Mirror Sync
     runs-on: ubuntu-latest
+npermissions: read-all
+
     needs: mirror-push
     if: always() && needs.mirror-push.result == 'success'
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v6.0.1
+        uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8
         with:
           fetch-depth: 0
 

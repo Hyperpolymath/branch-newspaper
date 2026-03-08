@@ -5,9 +5,13 @@
 # Enforces: No TypeScript, No Go, No Python (except SaltStack), No npm
 # Allows: ReScript, Deno, WASM, Rust, OCaml, Haskell, Guile/Scheme
 
+permissions: read-all
+
 name: RSR Anti-Pattern Check
 
 on:
+npermissions: read-all
+
   push:
     branches: [main, master, develop]
   pull_request:
@@ -16,8 +20,10 @@ on:
 jobs:
   antipattern-check:
     runs-on: ubuntu-latest
+npermissions: read-all
+
     steps:
-      - uses: actions/checkout@v6.0.1
+      - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8
 
       - name: Check for TypeScript
         run: |
