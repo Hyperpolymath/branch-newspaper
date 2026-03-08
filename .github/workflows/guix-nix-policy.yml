@@ -1,9 +1,15 @@
 # SPDX-License-Identifier: PMPL-1.0-or-later
+permissions: read-all
+
 name: Guix/Nix Package Policy
 on: [push, pull_request]
+npermissions: read-all
+
 jobs:
   check:
     runs-on: ubuntu-latest
+npermissions: read-all
+
     steps:
       - uses: actions/checkout@v6.0.2
       - name: Enforce Guix primary / Nix fallback
