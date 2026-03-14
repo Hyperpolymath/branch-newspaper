@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: PMPL-1.0-or-later
 = branch-newspaper - Citation Guide
 :toc:
 
@@ -6,29 +7,29 @@
 [source,bibtex]
 ----
 @software{branch-newspaper_2025,
-  author = {Polymath, Hyper},
+  author = {Jewell, Jonathan D.A.},
   title = {branch-newspaper},
   year = {2025},
   url = {https://github.com/hyperpolymath/branch-newspaper},
-  license = {AGPL-3.0-or-later}
+  license = {PMPL-1.0-or-later}
 }
 ----
 
 == Harvard Style
 
-Polymath, H. (2025) _branch-newspaper_ [Computer software]. Available at: https://github.com/hyperpolymath/branch-newspaper
+Jewell, J.D.A. (2025) _branch-newspaper_ [Computer software]. Available at: https://github.com/hyperpolymath/branch-newspaper
 
 == OSCOLA
 
-Hyper Polymath, 'branch-newspaper' (2025) <https://github.com/hyperpolymath/branch-newspaper>
+Jonathan D.A. Jewell, 'branch-newspaper' (2025) <https://github.com/hyperpolymath/branch-newspaper>
 
 == MLA
 
-Polymath, Hyper. "branch-newspaper." 2025, github.com/hyperpolymath/branch-newspaper.
+Jewell, Jonathan D.A. "branch-newspaper." 2025, github.com/hyperpolymath/branch-newspaper.
 
 == APA 7
 
-Polymath, H. (2025). _branch-newspaper_ [Computer software]. GitHub. https://github.com/hyperpolymath/branch-newspaper
+Jewell, J.D.A. (2025). _branch-newspaper_ [Computer software]. GitHub. https://github.com/hyperpolymath/branch-newspaper
 
 == See Also
 
