@@ -1,0 +1,26 @@
+# SPDX-License-Identifier: PMPL-1.0-or-later
+# Clade declaration — part of the gv-clade-index registry
+# See: https://github.com/hyperpolymath/gv-clade-index
+
+[identity]
+uuid = "889b8a0d-8c43-5828-a4b5-836409ddd4f6"
+primary-forge = "github"
+primary-owner = "hyperpolymath"
+canonical-name = "branch-newspaper"
+prefixed-name = "ap-branch-newspaper"
+
+[clade]
+primary = "ap"
+secondary = ["pt"]
+assigned = "2026-03-16"
+rationale = ""
+
+[forges]
+github = "hyperpolymath/branch-newspaper"
+gitlab = "hyperpolymath/branch-newspaper"
+bitbucket = "hyperpolymath/branch-newspaper"
+
+[lineage]
+type = "standalone"
+parent = "Citizen journalism — Phoenix LiveView + IPFS"
+born = "2026-03-16"
