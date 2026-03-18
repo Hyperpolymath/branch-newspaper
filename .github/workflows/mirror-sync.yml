@@ -1,10 +1,12 @@
 # SPDX-License-Identifier: PMPL-1.0-or-later
-permissions: read-all
+permissions:
+  contents: read
 
 name: Mirror Sync
 
 on:
-npermissions: read-all
+npermissions:
+  contents: read
 
   push:
     branches: ['**']
@@ -15,7 +17,8 @@ npermissions: read-all
     inputs:
       full_sync:
         description: 'Perform full mirror sync (all branches and tags)'
-npermissions: read-all
+npermissions:
+  contents: read
 
         required: false
         default: 'false'
@@ -25,7 +28,8 @@ jobs:
   mirror-push:
     name: Push to GitLab Mirror
     runs-on: ubuntu-latest
-npermissions: read-all
+npermissions:
+  contents: read
 
     # Only run on the main repo, not forks
     if: github.repository == 'hyperpolymath/branch-newspaper'
@@ -124,7 +128,8 @@ npermissions: read-all
   verify-mirror:
     name: Verify Mirror Sync
     runs-on: ubuntu-latest
-npermissions: read-all
+npermissions:
+  contents: read
 
     needs: mirror-push
     if: always() && needs.mirror-push.result == 'success'

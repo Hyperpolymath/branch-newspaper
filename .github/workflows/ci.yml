@@ -1,10 +1,12 @@
 # SPDX-License-Identifier: PMPL-1.0-or-later
-permissions: read-all
+permissions:
+  contents: read
 
 name: CI
 
 on:
-npermissions: read-all
+npermissions:
+  contents: read
 
   push:
     branches: [main, master, develop]
@@ -22,7 +24,8 @@ jobs:
   lint:
     name: Lint & Format
     runs-on: ubuntu-latest
-npermissions: read-all
+npermissions:
+  contents: read
 
     steps:
       - name: Checkout code
@@ -32,10 +35,12 @@ npermissions: read-all
         uses: erlef/setup-beam@v1
         with:
           elixir-version: ${{ env.ELIXIR_VERSION }}
-npermissions: read-all
+npermissions:
+  contents: read
 
           otp-version: ${{ env.OTP_VERSION }}
-npermissions: read-all
+npermissions:
+  contents: read
 
 
       - name: Cache deps
@@ -60,7 +65,8 @@ npermissions: read-all
   test:
     name: Test (Elixir ${{ matrix.elixir }} / OTP ${{ matrix.otp }})
     runs-on: ubuntu-latest
-npermissions: read-all
+npermissions:
+  contents: read
 
     strategy:
       fail-fast: false
@@ -84,10 +90,12 @@ npermissions: read-all
         uses: erlef/setup-beam@v1
         with:
           elixir-version: ${{ matrix.elixir }}
-npermissions: read-all
+npermissions:
+  contents: read
 
           otp-version: ${{ matrix.otp }}
-npermissions: read-all
+npermissions:
+  contents: read
 
 
       - name: Cache deps
@@ -115,7 +123,8 @@ npermissions: read-all
   build:
     name: Build Release
     runs-on: ubuntu-latest
-npermissions: read-all
+npermissions:
+  contents: read
 
     needs: [lint, test]
     if: github.ref == 'refs/heads/main' || startsWith(github.ref, 'refs/tags/')
@@ -130,10 +139,12 @@ npermissions: read-all
         uses: erlef/setup-beam@v1
         with:
           elixir-version: ${{ env.ELIXIR_VERSION }}
-npermissions: read-all
+npermissions:
+  contents: read
 
           otp-version: ${{ env.OTP_VERSION }}
-npermissions: read-all
+npermissions:
+  contents: read
 
 
       - name: Cache deps
@@ -159,7 +170,8 @@ npermissions: read-all
   mirror-to-gitlab:
     name: Mirror to GitLab
     runs-on: ubuntu-latest
-npermissions: read-all
+npermissions:
+  contents: read
 
     needs: [test]
     if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || startsWith(github.ref, 'refs/tags/'))
