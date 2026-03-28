@@ -1,0 +1,22 @@
+# SPDX-License-Identifier: PMPL-1.0-or-later
+# Intentfile (A2ML Canonical)
+# Copyright (c) 2026 Jonathan D.A. Jewell (hyperpolymath)
+
+@abstract:
+Declared intent and purpose for Branch Newspaper.
+@end
+
+## Purpose
+
+Branch Newspaper — A Phoenix LiveView application for citizen journalists and union branches with integration for decentralized content sto
+
+## Anti-Purpose
+
+This project is NOT:
+- A fork or wrapper around another tool
+- A monorepo (unless explicitly structured as one)
+
+## If In Doubt
+
+If you are unsure whether a change is in scope, ask.
+Sensitive areas: ABI definitions, license headers, CI workflows.
