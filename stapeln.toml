@@ -1,0 +1,8 @@
+# SPDX-License-Identifier: PMPL-1.0-or-later
+
+[project]
+name = "branch-newspaper"
+description = "Branch Newspaper"
+
+[container]
+base = "cgr.dev/chainguard/wolfi-base:latest"
