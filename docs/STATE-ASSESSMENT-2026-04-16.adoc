@@ -1,0 +1,190 @@
+// SPDX-License-Identifier: PMPL-1.0-or-later
+// STATE-ASSESSMENT-2026-04-16.adoc — Honest project state assessment
+// Generated: 2026-04-16
+
+= Branch Newspaper — State Assessment (2026-04-16)
+:toc:
+
+== Executive Summary
+
+Branch Newspaper has *zero application code* despite extensive documentation
+describing a Phoenix LiveView application. The repository is currently an
+infrastructure/governance scaffold with no runnable product.
+
+== Application Code Status
+
+[cols="2,2"]
+|===
+| Documented Component | Actual Status
+
+| Elixir ~1.15 + Phoenix 1.8.1
+| No `.ex` or `.exs` files exist
+
+| `mix.exs` project definition
+| Does not exist
+
+| `lib/branch_newspaper/` business logic
+| Directory does not exist
+
+| `config/` application configuration
+| Directory does not exist
+
+| `assets/` frontend (Tailwind, JS)
+| Directory does not exist
+
+| `priv/` (migrations, static files)
+| Directory does not exist
+
+| IPFS client integration (Kubo)
+| No integration code
+
+| LiveView real-time UI
+| No UI code
+
+| Meeting Minutes CRUD
+| No implementation
+|===
+
+**Completion: 0% of application features.**
+
+== What Does Exist
+
+=== Infrastructure (extensive)
+
+* 20 GitHub Actions workflows — mostly policy enforcement:
+  ** `npm-bun-blocker.yml`, `ts-blocker.yml` (ban enforcement)
+  ** `rsr-antipattern.yml`, `scorecard.yml`, `scorecard-enforcer.yml`
+  ** `workflow-linter.yml`, `wellknown-enforcement.yml`
+  ** `dogfood-gate.yml`, `hypatia-scan.yml`, `secret-scanner.yml`
+  ** `ci.yml`, `codeql.yml`, `quality.yml`
+  ** `mirror-sync.yml`, `mirror.yml`, `instant-sync.yml`
+  ** `casket-pages.yml`, `boj-build.yml`
+  ** `guix-nix-policy.yml`, `security-policy.yml`
+* `.gitlab-ci.yml` for GitLab mirror
+* Justfile with onboarding recipes (`doctor`, `heal`, `tour`)
+  ** Core recipes (`build`, `test`, `clean`, `fmt`, `lint`) are all stubs: `echo "TODO: Add X command"`
+
+=== Governance & Licensing
+
+* PMPL-1.0-or-later (Palimpsest License) — full license text
+* `CODE_OF_CONDUCT.md`, `CONTRIBUTING.md`, `SECURITY.md`
+* `MAINTAINERS.adoc`, `NOTICE`
+
+=== Machine-Readable Metadata
+
+* `.machine_readable/6a2/STATE.a2ml` — correctly reports `completion-percentage = 0`
+* `.machine_readable/6a2/` — META, ECOSYSTEM, AGENTIC, PLAYBOOK, NEUROSYM
+* `.machine_readable/CLADE.a2ml` — project identity/UUID/forge definitions
+* `.machine_readable/` contractile files:
+  ** `INTENT.contractile` (purpose/anti-purpose, mostly templated)
+  ** `MUST.contractile` (invariants, ~91 lines)
+  ** `TRUST.contractile` (AI agent permissions — maximal trust granted)
+  ** `ADJUST.contractile` (WCAG 2.2 AA accessibility requirements)
+* `.machine_readable/agent_instructions/` — AI methodology layer:
+  ** `methodology.a2ml` (default mode, invariants, ring ceiling)
+  ** `coverage.a2ml` (session coverage tracking)
+  ** `debt.a2ml` (meander debt between sessions)
+
+=== Contractile Validation System
+
+`contractiles/` directory contains a template contract system with K9 (Nickel) validators:
+
+* `must/Mustfile`, `trust/Trustfile.a2ml`, `dust/Dustfile`
+* `intend/Intentfile.a2ml`, `lust/Intentfile`
+* `k9/must-check.k9.ncl` and template validators (yard, hunt, kennel)
+
+This machine-checks MUST constraints but has nothing application-specific to check.
+
+=== FFI/ABI Template (Unsubstituted)
+
+Despite no Elixir app, the repo ships a complete Zig FFI + Idris2 ABI scaffold:
+
+* `ffi/zig/build.zig` — build config for shared/static libraries, C header generation
+* `ffi/zig/src/main.zig` (274 lines) — template with `{{project}}` placeholders throughout
+* `ffi/zig/test/integration_test.zig` (182 lines) — template
+* `ABI-FFI-README.md` (386 lines) — documents the "Idris2 ABI → C header → Zig FFI → any language" pattern
+
+The Idris2 ABI definitions referenced (`src/abi/Foreign.idr`, `src/abi/Types.idr`) do not exist. This was acknowledged in commit `936cebe`: "Remove template-only ABI files that falsely implied formal verification."
+
+=== CI Script Library
+
+`ci-scripts/` contains 4 enforcement scripts:
+* `lint.sh`, `validate-codeql.sh`, `validate-sha-pins.sh`, `validate-spdx.sh`
+
+These enforce policies on a codebase that doesn't exist.
+
+=== Template/Placeholder Code
+
+* `ffi/zig/src/main.zig` — unsubstituted RSR template (`{{project}}` placeholders)
+* `examples/SafeDOMExample.res` — standalone ReScript example, unconnected
+* `tests/fuzz/placeholder.txt` — empty
+
+=== Documentation (describes absent system)
+
+* `README.adoc` — detailed setup instructions for an app that doesn't exist
+* `ROADMAP.adoc` — 8-week phased plan, all items unchecked
+* `TOPOLOGY.md` — claims ~90% overall completion
+
+== Document Accuracy
+
+[cols="2,1,2"]
+|===
+| Document | Accuracy | Issue
+
+| `STATE.a2ml`
+| Correct
+| `completion-percentage = 0`
+
+| `TOPOLOGY.md`
+| Overstated
+| Claims ~90% completion; actual is 0%
+
+| `README.adoc`
+| Aspirational
+| Describes features, setup, and structure that don't exist
+
+| `ROADMAP.adoc`
+| Reasonable
+| All items correctly marked unchecked
+|===
+
+== Unresolved Architectural Tension
+
+The `CLAUDE.md` language policy bans Node.js/npm and mandates Deno + ReScript.
+The `README.adoc` describes an Elixir/Phoenix application which typically depends on
+Node.js (esbuild) for asset compilation.
+
+Elixir is RSR Tier 1 (Gold) and is permitted. However, the frontend toolchain conflict
+needs resolution before development begins:
+
+1. **Option A**: Use Phoenix with Deno-based asset pipeline (non-standard, requires custom setup)
+2. **Option B**: Use Phoenix with its standard esbuild pipeline (conflicts with CLAUDE.md)
+3. **Option C**: Rebuild the concept in a fully CLAUDE.md-compliant stack (ReScript + Deno + Gleam)
+
+== Git History Analysis
+
+The last 30 commits are exclusively infrastructure and meta-work:
+
+* RSR compliance (SPDX headers, SHA-pinned actions, CODE_OF_CONDUCT)
+* CI/CD guardrails (dogfood-gate, hypatia-scan, pre-commit hooks)
+* UX manifesto and onboarding infrastructure
+* Agent instructions and methodology layers
+* CRG badge tooling
+* License clarification
+
+**No commit has introduced application logic.**
+
+== Recommendations
+
+1. **Resolve the tech stack decision** before writing code
+2. **Correct TOPOLOGY.md** to reflect actual completion (0%) — it currently claims ~90%
+3. **Prioritise a walking skeleton**: one vertical slice (e.g., create + list a meeting minute) end-to-end
+4. **Scale infrastructure to match code**: the 20 CI workflows enforce rules on a codebase that doesn't exist yet
+5. **Substitute or remove the Zig template**: `ffi/zig/src/main.zig` still has `{{project}}` placeholders. Given the application is described as Elixir/Phoenix, the FFI/ABI layer may not be needed at all — consider following the precedent of commit `936cebe` which removed template-only ABI files
+6. **Decide if this is a template or an application**: The repo currently behaves like a meta/template repository (RSR scaffolding) but is branded as a specific application. These are different products
+
+== Direction Assessment
+
+The project is building **guardrails for a road that hasn't been paved**.
+Governance, policy enforcement, and compliance infrastructure are mature.
+Application development has not started.
