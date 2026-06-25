@@ -1,73 +1,80 @@
-[![Sponsor](https://img.shields.io/badge/Sponsor-%E2%9D%A4-pink?logo=github)](https://github.com/sponsors/hyperpolymath)
+<!--
+SPDX-License-Identifier: CC-BY-SA-4.0
+SPDX-FileCopyrightText: 2025-2026 Jonathan D.A. Jewell <j.d.a.jewell@open.ac.uk>
+-->
 
-= Branch Newspaper
+[![License: PMPL-1.0](https://img.shields.io/badge/License-MPL--2.0-blue.svg)](https://github.com/hyperpolymath/palimpsest-license)
+[![Palimpsest](https://img.shields.io/badge/Philosophy-Palimpsest-indigo.svg)](https://github.com/hyperpolymath/palimpsest-license)
 
-image:https://img.shields.io/badge/License-MPL--2.0-blue.svg[License: PMPL-1.0,link="https://github.com/hyperpolymath/palimpsest-license"]
-image:https://img.shields.io/badge/Philosophy-Palimpsest-indigo.svg[Palimpsest,link="https://github.com/hyperpolymath/palimpsest-license"]
+\[\![CI\]()\](<https://github.com/hyperpolymath/branch-newspaper/actions/workflows/ci.yml>)
+\[\![Mirror
+Sync\]()\](<https://github.com/hyperpolymath/branch-newspaper/actions/workflows/mirror-sync.yml>)
+\[\![CodeQL\]()\](<https://github.com/hyperpolymath/branch-newspaper/actions/workflows/codeql.yml>)
 
+A Phoenix LiveView application for citizen journalists and union
+branches with integration for decentralized content storage.
 
-[![CI]()](https://github.com/hyperpolymath/branch-newspaper/actions/workflows/ci.yml)
-[![Mirror Sync]()](https://github.com/hyperpolymath/branch-newspaper/actions/workflows/mirror-sync.yml)
-[![CodeQL]()](https://github.com/hyperpolymath/branch-newspaper/actions/workflows/codeql.yml)
+# Features
 
-A Phoenix LiveView application for citizen journalists and union branches with integration for decentralized content storage.
+- **Meeting Minutes Management** - Create, edit, and organize meeting
+  minutes
 
-== Features
+- **IPFS Integration** - Store content on IPFS for decentralized,
+  immutable storage
 
-- *Meeting Minutes Management* - Create, edit, and organize meeting minutes
-- *IPFS Integration* - Store content on IPFS for decentralized, immutable storage
-- *Real-time UI* - Phoenix LiveView for instant updates without page reloads
-- *Tag Organization* - Categorize minutes with tags for easy discovery
+- **Real-time UI** - Phoenix LiveView for instant updates without page
+  reloads
 
-== Tech Stack
+- **Tag Organization** - Categorize minutes with tags for easy discovery
 
-| Component | Technology |
-|-----------|------------|
-| Language | Elixir ~> 1.15 |
-| Framework | Phoenix 1.8.1 |
-| Real-time | Phoenix LiveView 1.1.0 |
-| Database | SQLite3 (dev) / PostgreSQL (prod) |
-| Storage | IPFS (Kubo) |
-| CSS | Tailwind CSS v4 |
+# Tech Stack
 
-== Prerequisites
+\| Component \| Technology \| \|-----------\|------------\| \| Language
+\| Elixir ~\> 1.15 \| \| Framework \| Phoenix 1.8.1 \| \| Real-time \|
+Phoenix LiveView 1.1.0 \| \| Database \| SQLite3 (dev) / PostgreSQL
+(prod) \| \| Storage \| IPFS (Kubo) \| \| CSS \| Tailwind CSS v4 \|
+
+# Prerequisites
 
 - Elixir 1.15+ and Erlang/OTP 25+
+
 - Node.js 18+ (for asset compilation)
+
 - IPFS node (Kubo) running locally or accessible
 
-== Getting Started
+# Getting Started
 
-=== Development Setup
+## Development Setup
 
-1. *Clone the repository*
-   ```bash
-   git clone https://github.com/hyperpolymath/branch-newspaper.git
-   cd branch-newspaper
-   ```
+1.  **Clone the repository** `` `bash `` `git` `clone`
+    [`https://github.com/hyperpolymath/branch-newspaper.git`](https://github.com/hyperpolymath/branch-newspaper.git)
+    `cd` `branch-newspaper`\`
 
-2. *Install dependencies and setup database*
-   ```bash
-   mix setup
-   ```
+<!-- -->
 
-3. *Start the IPFS daemon* (in a separate terminal)
-   ```bash
-   ipfs daemon
-   ```
+2.  **Install dependencies and setup database** `` `bash `` `mix`
+    `setup`\`
 
-4. *Start the Phoenix server*
-   ```bash
-   mix phx.server
-   # Or with interactive Elixir shell:
-   iex -S mix phx.server
-   ```
+<!-- -->
 
-5. *Visit the application*
+3.  **Start the IPFS daemon** (in a separate terminal) `` `bash ``
+    `ipfs` `daemon`\`
 
-   Open [http://localhost:4000](http://localhost:4000) in your browser.
+<!-- -->
 
-=== Running Tests
+4.  **Start the Phoenix server** `` `bash `` `mix` `phx.server` `#` `Or`
+    `with` `interactive` `Elixir` `shell:` `iex` `-S` `mix`
+    `phx.server`\`
+
+<!-- -->
+
+5.  **Visit the application**
+
+<!-- -->
+
+    Open [http://localhost:4000](http://localhost:4000) in your browser.
+
+## Running Tests
 
 ```bash
 = Run all tests
@@ -83,7 +90,7 @@ mix test --cover
 mix precommit
 ```
 
-=== Code Quality
+## Code Quality
 
 ```bash
 = Check formatting
@@ -95,90 +102,106 @@ mix format --check-formatted
 ./ci-scripts/lint.sh
 ```
 
-== Configuration
+# Configuration
 
-=== Environment Variables
+## Environment Variables
 
-| Variable | Description | Default |
-|----------|-------------|---------|
-| `SECRET_KEY_BASE` | Phoenix secret key | (generated) |
-| `DATABASE_URL` | Database connection string | SQLite file |
-| `PHX_HOST` | Production hostname | localhost |
-| `PORT` | HTTP port | 4000 |
-| `IPFS_API_URL` | IPFS API endpoint | http://localhost:5001/api/v0 |
+\| Variable \| Description \| Default \|
+\|----------\|-------------\|---------\| \| `SECRET_KEY_BASE` \| Phoenix
+secret key \| (generated) \| \| `DATABASE_URL` \| Database connection
+string \| SQLite file \| \| `PHX_HOST` \| Production hostname \|
+localhost \| \| `PORT` \| HTTP port \| 4000 \| \| `IPFS_API_URL` \| IPFS
+API endpoint \| <http://localhost:5001/api/v0> \|
 
-See [SECRETS.md](SECRETS.md) for complete secrets documentation.
+See \[SECRETS.md\](SECRETS.md) for complete secrets documentation.
 
-== Project Structure
+# Project Structure
 
-```
-branch-newspaper/
-├── assets/              # Frontend assets (JS, CSS)
-├── ci-scripts/          # Shared CI/CD scripts
-├── config/              # Application configuration
-├── lib/
-│   ├── branch_newspaper/        # Business logic
-│   │   ├── content/            # Content domain
-│   │   └── services/           # External services (IPFS)
-│   └── branch_newspaper_web/    # Web interface
-│       ├── components/         # UI components
-│       ├── controllers/        # HTTP controllers
-│       └── live/               # LiveView modules
-├── priv/                # Private application files
-└── test/                # Test files
-```
+    branch-newspaper/
+    ├── assets/              # Frontend assets (JS, CSS)
+    ├── ci-scripts/          # Shared CI/CD scripts
+    ├── config/              # Application configuration
+    ├── lib/
+    │   ├── branch_newspaper/        # Business logic
+    │   │   ├── content/            # Content domain
+    │   │   └── services/           # External services (IPFS)
+    │   └── branch_newspaper_web/    # Web interface
+    │       ├── components/         # UI components
+    │       ├── controllers/        # HTTP controllers
+    │       └── live/               # LiveView modules
+    ├── priv/                # Private application files
+    └── test/                # Test files
 
-== Documentation
+# Documentation
 
-- [ROADMAP.adoc](ROADMAP.adoc) - Development roadmap and MVP plan
-- [TODO.md](TODO.md) - Task backlog and improvements
-- [SECRETS.md](SECRETS.md) - Secrets and configuration guide
-- [AGENTS.md](AGENTS.md) - AI coding guidelines
+- \[ROADMAP.adoc\](ROADMAP.adoc) - Development roadmap and MVP plan
 
-== CI/CD
+- \[TODO.md\](TODO.md) - Task backlog and improvements
 
-This project uses unified CI/CD that runs on both GitHub Actions and GitLab CI:
+- \[SECRETS.md\](SECRETS.md) - Secrets and configuration guide
 
-- *Lint* - Code formatting and static analysis
-- *Test* - ExUnit tests across multiple Elixir versions
-- *Build* - Release compilation for deployment
-- *Mirror* - Automatic sync between GitHub and GitLab
+- \[AGENTS.md\](AGENTS.md) - AI coding guidelines
 
-=== Test Matrix
+# CI/CD
 
-| Elixir | OTP | Status |
-|--------|-----|--------|
-| 1.15.0 | 25.3 | Minimum supported |
-| 1.15.7 | 26.2 | Primary |
-| 1.16.0 | 26.2 | Latest |
+This project uses unified CI/CD that runs on both GitHub Actions and
+GitLab CI:
 
-== Contributing
+- **Lint** - Code formatting and static analysis
 
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Run the precommit checks (`mix precommit`)
-4. Commit your changes (`git commit -m 'Add amazing feature'`)
-5. Push to the branch (`git push origin feature/amazing-feature`)
-6. Open a Pull Request
+- **Test** - ExUnit tests across multiple Elixir versions
 
-== Repository Mirrors
+- **Build** - Release compilation for deployment
 
-- *Primary (GitHub)*: https://github.com/hyperpolymath/branch-newspaper
-- *Mirror (GitLab)*: https://gitlab.com/maa-framework/3-applications/branch-newspaper
+- **Mirror** - Automatic sync between GitHub and GitLab
+
+## Test Matrix
+
+\| Elixir \| OTP \| Status \| \|--------\|-----\|--------\| \| 1.15.0 \|
+25.3 \| Minimum supported \| \| 1.15.7 \| 26.2 \| Primary \| \| 1.16.0
+\| 26.2 \| Latest \|
+
+# Contributing
+
+1.  Fork the repository
+
+2.  Create a feature branch (`git` `checkout` `-b`
+    `feature/amazing-feature`)
+
+3.  Run the precommit checks (`mix` `precommit`)
+
+4.  Commit your changes (`git` `commit` `-m` `’Add` `amazing`
+    `feature’`)
+
+5.  Push to the branch (`git` `push` `origin` `feature/amazing-feature`)
+
+6.  Open a Pull Request
+
+# Repository Mirrors
+
+- **Primary (GitHub)**:
+  <https://github.com/hyperpolymath/branch-newspaper>
+
+- **Mirror (GitLab)**:
+  <https://gitlab.com/maa-framework/3-applications/branch-newspaper>
 
 Changes pushed to GitHub are automatically mirrored to GitLab.
 
-== License
+# License
 
-This project is licensed under the Palimpsest-MPL-1.0 License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the Palimpsest-MPL-1.0 License - see the
+\[LICENSE\](LICENSE) file for details.
 
-== Acknowledgments
+# Acknowledgments
 
-- [Phoenix Framework](https://phoenixframework.org/)
-- [IPFS](https://ipfs.tech/)
-- Part of the [MAA Framework](https://gitlab.com/maa-framework) project
+- \[Phoenix Framework\](<https://phoenixframework.org/>)
 
+- \[IPFS\](<https://ipfs.tech/>)
 
-== Architecture
+- Part of the \[MAA Framework\](<https://gitlab.com/maa-framework>)
+  project
 
-See link:TOPOLOGY.md[TOPOLOGY.md] for a visual architecture map and completion dashboard.
+# Architecture
+
+See <a href="TOPOLOGY.md" class="md">TOPOLOGY</a> for a visual
+architecture map and completion dashboard.
