@@ -5,8 +5,6 @@ permissions:
 name: Mirror Sync
 
 on:
-npermissions:
-  contents: read
 
   push:
     branches: ['**']
@@ -17,8 +15,6 @@ npermissions:
     inputs:
       full_sync:
         description: 'Perform full mirror sync (all branches and tags)'
-npermissions:
-  contents: read
 
         required: false
         default: 'false'
@@ -28,8 +24,6 @@ jobs:
   mirror-push:
     name: Push to GitLab Mirror
     runs-on: ubuntu-latest
-npermissions:
-  contents: read
 
     # Only run on the main repo, not forks
     if: github.repository == 'hyperpolymath/branch-newspaper'
@@ -128,8 +122,6 @@ npermissions:
   verify-mirror:
     name: Verify Mirror Sync
     runs-on: ubuntu-latest
-npermissions:
-  contents: read
 
     needs: mirror-push
     if: always() && needs.mirror-push.result == 'success'
