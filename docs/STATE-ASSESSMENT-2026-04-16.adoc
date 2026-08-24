@@ -59,7 +59,7 @@ infrastructure/governance scaffold with no runnable product.
   ** `ci.yml`, `codeql.yml`, `quality.yml`
   ** `mirror-sync.yml`, `mirror.yml`, `instant-sync.yml`
   ** `casket-pages.yml`, `boj-build.yml`
-  ** `guix-nix-policy.yml`, `security-policy.yml`
+  ** `guix-guix-policy.yml`, `security-policy.yml`
 * `.gitlab-ci.yml` for GitLab mirror
 * Justfile with onboarding recipes (`doctor`, `heal`, `tour`)
   ** Core recipes (`build`, `test`, `clean`, `fmt`, `lint`) are all stubs: `echo "TODO: Add X command"`
@@ -116,7 +116,7 @@ These enforce policies on a codebase that doesn't exist.
 === Template/Placeholder Code
 
 * `ffi/zig/src/main.zig` — unsubstituted RSR template (`{{project}}` placeholders)
-* `examples/SafeDOMExample.res` — standalone ReScript example, unconnected
+* `examples/SafeDOMExample.res` — standalone AffineScript example, unconnected
 * `tests/fuzz/placeholder.txt` — empty
 
 === Documentation (describes absent system)
@@ -150,7 +150,7 @@ These enforce policies on a codebase that doesn't exist.
 
 == Unresolved Architectural Tension
 
-The `CLAUDE.md` language policy bans Node.js/npm and mandates Deno + ReScript.
+The `CLAUDE.md` language policy bans Node.js/npm and mandates Deno + AffineScript.
 The `README.adoc` describes an Elixir/Phoenix application which typically depends on
 Node.js (esbuild) for asset compilation.
 
@@ -159,7 +159,7 @@ needs resolution before development begins:
 
 1. **Option A**: Use Phoenix with Deno-based asset pipeline (non-standard, requires custom setup)
 2. **Option B**: Use Phoenix with its standard esbuild pipeline (conflicts with CLAUDE.md)
-3. **Option C**: Rebuild the concept in a fully CLAUDE.md-compliant stack (ReScript + Deno + Gleam)
+3. **Option C**: Rebuild the concept in a fully CLAUDE.md-compliant stack (AffineScript + Deno + Gleam)
 
 == Git History Analysis
 
